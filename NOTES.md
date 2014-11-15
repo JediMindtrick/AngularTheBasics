@@ -1,16 +1,22 @@
 
 ##Agenda
 1. Why and when would we use AngularJS, and when not?
-   * Single-Page-Apps - YES
-      1. Consumerization of the Enterprise (people don't want to spend all day working on crappy applications)
-      2. Push work-load out
-   * Javascript-heavy apps - Yes - the biggest hurdle in building large apps in js is structure
-         1. No native module system (yet)
-         2. No native observables (yet)
-         3. Treated like a "toy" language (don't)
-   * Line of business apps - Yes
-   * Heavy animation - Reconsider OR encapsulate animations in modules
-   * Embedded inside another platform (like Dynamics CRM forms) - RECONSIDER
+  *  Single-Page-Apps - YES
+    1. Consumerization of the Enterprise (people don't want to spend all day working on crappy applications)
+    2. Push work-load out
+  * Javascript-heavy apps - Yes - the biggest hurdle in building large apps in js is structure
+    1. No native module system (yet)
+    2. No native observables (yet)
+    3. Treated like a "toy" language (don't)
+  * Line of business apps - Yes
+  * Heavy animation - Reconsider OR encapsulate animations in modules
+    1. Example 1 - [Three.js Periodic Table](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)
+  * Embedded inside another platform (like Dynamics CRM forms) - RECONSIDER
+    1. Can it be done?  Yes, but these options are better if available...
+    2. Host regular static site in virtual sub-directory
+    3. Host static site on another server/runtime platform
+    4. Keep SPA-like behavior to a minimum and design around traditional post-back behavior
+    5. Use something else :)
 2. Basic angular concepts of routing, controllers, services and directives
 3. General design considerations
 4. Hands-On Lab
