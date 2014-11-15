@@ -4,11 +4,11 @@
   *  Single-Page-Apps - YES
     1. Consumerization of the Enterprise (people don't want to spend all day working on crappy applications)
     2. Push work-load out
-  * Javascript-heavy apps - Yes - the biggest hurdle in building large apps in js is structure
+  * Javascript-heavy apps - YES - the biggest hurdle in building large apps in js is structure
     1. No native module system (yet)
     2. No native observables (yet)
     3. Treated like a "toy" language (don't)
-  * Line of business apps - Yes
+  * Line of business apps - YES
   * Heavy animation - Reconsider OR encapsulate animations in modules
     1. Example 1 - [Three.js Periodic Table](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)
   * Embedded inside another platform (ex. Dynamics CRM forms) - RECONSIDER
