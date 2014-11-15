@@ -71,3 +71,5 @@ This would be my mostly comprehensive list of angular topics, in the order I wou
 ####Useful Links
 - [AnvularJS v Backbone v Ember](http://www.airpair.com/js/javascript-framework-comparison)
 - [Interceptors](http://www.webdeveasy.com/interceptors-in-angularjs-and-useful-examples/)
+
+[Boromir's Advice](http://i.imgur.com/kTh9x54.png)
