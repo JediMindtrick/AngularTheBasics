@@ -1,31 +1,41 @@
-This would be my mostly comprehensive list of angular topics, in the order I would present them and also in order of importance (imo):
 
 ##Agenda
 1. Why and when would we use AngularJS, and when not?
+   * Single-Page-Apps - YES
+      1. Consumerization of the Enterprise (people don't want to spend all day working on crappy applications)
+      2. Push work-load out
+   * Javascript-heavy apps - Yes - the biggest hurdle in building large apps in js is structure
+         1. No native module system (yet)
+         2. No native observables (yet)
+         3. Treated like a "toy" language (don't)
+   * Line of business apps - Yes
+   * Heavy animation - Reconsider OR encapsulate animations in modules
+   * Embedded inside another platform (like Dynamics CRM forms) - RECONSIDER
 2. Basic angular concepts of routing, controllers, services and directives
 3. General design considerations
 4. Hands-On Lab
 
-
 ##Detailed Agenda
+
+This would be my mostly comprehensive list of angular topics, in the order I would present them and also in order of importance (imo):
 
 ####Essential
 1. Brief background
-    * jQuery -> Backbone -> Angular
-    * Data-binding
-    * IE Support
+   * jQuery -> Backbone -> Angular
+   * Data-binding
+   * IE Support
 2. Project Structure - Angular seed vs. recent recommended best practice
 3. Module definition
-    * Dependency injection
-    * Main module
+   * Dependency injection
+   * Main module
 4. Controllers
-    * $scope
-    * $rootScope
-    * nested controllers
+   * $scope
+   * $rootScope
+   * nested controllers
 5. Views
 6. Routing
-    * OOTB router
-    * angular-ui router
+   * OOTB router
+   * angular-ui router
 7. Services
 8. $watch
 
@@ -36,20 +46,20 @@ This would be my mostly comprehensive list of angular topics, in the order I wou
 4. Custom Directives
 5. $broadcast/$emit/$on
 6. Libraries
-    * Angular-UI
-    * Angular-bootstrap​
+   * Angular-UI
+   * Angular-bootstrap​
 
 
 ####Ancillary
 1. Tooling
-    * nodejs/npm
-    * bower
-    * grunt
-    * yoeman
-    * chrome plugin
+   * nodejs/npm
+   * bower
+   * grunt
+   * yoeman
+   * chrome plugin
 2. Testing
-    * Karma
-    * Protractor
+   * Karma
+   * Protractor
 
 ####Useful Links
 - [AnvularJS v Backbone v Ember](http://www.airpair.com/js/javascript-framework-comparison)
