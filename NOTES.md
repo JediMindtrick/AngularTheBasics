@@ -1,6 +1,13 @@
 This would be my mostly comprehensive list of angular topics, in the order I would present them and also in order of importance (imo):
 
 ##Agenda
+1. Why and when would we use AngularJS, and when not?
+2. Basic angular concepts of routing, controllers, services and directives
+3. General design considerations
+4. Hands-On Lab
+
+
+##Detailed Agenda
 
 ####Essential
 1. Brief background
