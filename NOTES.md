@@ -11,10 +11,11 @@
   * Line of business apps - Yes
   * Heavy animation - Reconsider OR encapsulate animations in modules
     1. Example 1 - [Three.js Periodic Table](http://mrdoob.github.io/three.js/examples/css3d_periodictable.html)
-  * Embedded inside another platform (like Dynamics CRM forms) - RECONSIDER
+  * Embedded inside another platform (ex. Dynamics CRM forms) - RECONSIDER
     1. Can it be done?  Yes, but these options are better if available...
     2. Host regular static site in virtual sub-directory
     3. Host static site on another server/runtime platform
+      * For #2 & #3 use platform sdk, service endpoints, etc.
     4. Keep SPA-like behavior to a minimum and design around traditional post-back behavior
     5. Use something else :)
 2. Basic angular concepts of routing, controllers, services and directives
