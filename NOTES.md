@@ -45,6 +45,15 @@
   4. *they are stateless*
   5. can have more than one active at a time
   6. can nest them
+ * directives and templates, ie ng-* + {{}}
+  1. similar to knockout.js data-binding
+  2. however, they can appear as attribute name, tag name, comments, or class name
+ 
+          <my-dir></my-dir>
+          <span my-dir="exp"></span>
+          <!-- directive: my-dir exp -->
+          <span class="my-dir: exp;"></span>
+  3. foo
 3. General design considerations
  * Angular-seed (i.e. by layer) nuh-uh
  * ngBoilerplate (i.e. by feature) yep
