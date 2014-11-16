@@ -19,7 +19,36 @@
     4. Keep SPA-like behavior to a minimum and design around traditional post-back behavior
     5. Use something else :)
 2. Basic angular concepts of routing, controllers, services and directives
+ * Pieces of a single-page app
+  1. Modularization - angular.module()
+  2. Routing - $stateProvider service and OOTB router
+  3. Data-binding/Templating - $scope + ng* + {{}}
+  4. Ajax - $http service
+ * angular.module()
+  1. only one of the form angular.module('Name',[])
+  2. add to the module using just angular.module('Name')
+  3. .config(), .run() - before services are available, after services are available
+  4. .factory(), .controller(), .directive(), .filter() ...
+  5. do not handle loading, so script tags are still needed to get them on the page
+  6. do handle what dependency injection (*does order of loaded scripts matter?)
+ * app
+  1. get on page via ng-app
+  2. just another module, usually has some config/run blocks
+  3. I like to put a main controller up on this module
+   * provides an inherited scope
+   * "app-shell"
+  4. routing usually done off of this guy
+ * controller
+  1. just another module
+  2. preferred form is: .controller('NameCtrl',['$scope','dep1',function($scope, dep1){ }]);
+  3. get on page via ng-controller
+  4. *they are stateless*
+  5. can have more than one active at a time
+  6. can nest them
 3. General design considerations
+ * Angular-seed (i.e. by layer) nuh-uh
+ * ngBoilerplate (i.e. by feature) yep
+ * Angular team's recent recomendation yep
 4. Hands-On Lab
 
 ##Detailed Agenda
