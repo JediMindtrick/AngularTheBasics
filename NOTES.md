@@ -73,3 +73,4 @@ This would be my mostly comprehensive list of angular topics, in the order I wou
 - [Interceptors](http://www.webdeveasy.com/interceptors-in-angularjs-and-useful-examples/)
 
 [Boromir's Advice](http://i.imgur.com/kTh9x54.png)
+[Imgur](http://i.imgur.com/huvPLDE.png)
