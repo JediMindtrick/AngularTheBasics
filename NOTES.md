@@ -71,11 +71,16 @@
       * ng-model
       * ng-repeat
       * ng-controller
+      * ui-view tag
       * 
-          ```<ui-view></ui-view>
+      
+              <ui-view></ui-view>
       * ng-repeat
       * ng-href
       * ng-include
+      *
+
+              <div ng-include="'/SPA/LOBApp/shell/navbar.html'"></div>
     5. take care with custom directives and IE8
     6. try to keep logic out of templates because it's very hard to debug
     7. {{}}
@@ -92,12 +97,34 @@
        * more complex expressions are possible, but not often used
     4. $scope.$digest and $apply [Safe Apply Function](https://gist.github.com/JediMindtrick/f737a1a0e5b0d059deb8)
     5. $broadcast/$emit/$on
-  * TODO: routing
-  * TODO: services
+  * routing - two contenders
+    1. both are external to angular core and therefore require loading via script tag
+    2. both have useful hooks for view changes and retrieving parameters
+    2. ng-route built by angular team
+    3. ui-route built by angular-ui team
+    4. ui-router generally preferred in the community
+       * nested views
+       * concept of 'state'
+    5. [Example](https://github.com/JediMindtrick/DemoAngularJS/blob/master/DemoAngularJS/SPA/LOBApp/lob.html)
+    6. when possible, using ng-href or ui-sref to navigate urls (views) is a good idea
+  * services
+    1. common ones $scope, $stateProvider, $http, $window, $log
+    2. singletons
+       * good for holding state
+       * usable for cross-module communication
+    2. retrieve by declaring a dependency on the module at the module level and a dependency on the service at the .controller()/.service()/.whatever() level
+    3. 4 ways to create, but 2 common ones 
+       * [See Gist Here](https://gist.github.com/JediMindtrick/8b2532de1a92afa49e83) 
+       * [Stackoverflow Answer1](http://stackoverflow.com/questions/13762228/confused-about-service-vs-factory/13763886#13763886)
+       * [Stackoverflow Answer2](http://stackoverflow.com/questions/15666048/service-vs-provider-vs-factory)
 3. General design considerations
- * Angular-seed (i.e. by layer) nuh-uh
- * ngBoilerplate (i.e. by feature) yep
- * Angular team's recent recomendation yep
+ * Angular-seed (i.e. by layer) - if you feel like that's what you need to do
+ * ngBoilerplate (i.e. by feature) - yes
+ * Angular team's recent recomendation - yes
+ * Dependency management
+   1. dependencies are managed
+   2. loading them is not
+   3. yes you can use RequireJS
 4. Hands-On Lab
 
 ##Detailed Agenda
