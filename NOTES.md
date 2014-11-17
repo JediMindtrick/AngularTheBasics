@@ -79,7 +79,21 @@
     5. take care with custom directives and IE8
     6. try to keep logic out of templates because it's very hard to debug
     7. {{}}
-  * foo
+  * $scope
+    1. inheritance
+    2. $rootScope & $parent
+    3. $scope.$watch
+     
+            scope.$watch('name', function(newValue, oldValue) {
+              scope.counter = scope.counter + 1;
+            });    
+       * deep watch - 3rd parameter set to true
+       * $watchCollection
+       * more complex expressions are possible, but not often used
+    4. $scope.$digest and $apply [Safe Apply Function](https://gist.github.com/JediMindtrick/f737a1a0e5b0d059deb8)
+    5. $broadcast/$emit/$on
+  * TODO: routing
+  * TODO: services
 3. General design considerations
  * Angular-seed (i.e. by layer) nuh-uh
  * ngBoilerplate (i.e. by feature) yep
