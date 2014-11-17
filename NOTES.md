@@ -117,14 +117,24 @@
        * [See Gist Here](https://gist.github.com/JediMindtrick/8b2532de1a92afa49e83) 
        * [Stackoverflow Answer1](http://stackoverflow.com/questions/13762228/confused-about-service-vs-factory/13763886#13763886)
        * [Stackoverflow Answer2](http://stackoverflow.com/questions/15666048/service-vs-provider-vs-factory)
+  * $http
+    1. .get('/some/url/here')
+    2. .post('/some/url/here',{thisHereObject: 'contains my data'}
+    3. put/delete/patch/head/jsonp supported
+    4. they return promises
+       * get to know these and how to use them
+       * .then(), .catch(), .finally() (I prefer these)
+       * $http specific - .success(), .error()
+    4. interceptors [Example](https://github.com/JediMindtrick/DemoAngularJS/blob/master/DemoAngularJS/SPA/LOBApp/lob-httpInterceptors.js)
 3. General design considerations
  * Angular-seed (i.e. by layer) - if you feel like that's what you need to do
  * ngBoilerplate (i.e. by feature) - yes
- * Angular team's recent recomendation - yes
+ * Angular team's recent recomendation (a lot like ngBoilerplate) - yes
  * Dependency management
    1. dependencies are managed
    2. loading them is not
-   3. yes you can use RequireJS
+   3. yes, you can use RequireJS with AngularJS
+ * Let the front-end model be the front-end model - consider using $httpBackend
 4. Hands-On Lab
 
 ##Detailed Agenda
