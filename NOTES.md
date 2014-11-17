@@ -121,11 +121,12 @@
     1. .get('/some/url/here')
     2. .post('/some/url/here',{thisHereObject: 'contains my data'}
     3. put/delete/patch/head/jsonp supported
-    4. they return promises
+    4. doesn't cache by default
+    5. they return promises
        * get to know these and how to use them
        * .then(), .catch(), .finally() (I prefer these)
        * $http specific - .success(), .error()
-    4. interceptors [Example](https://github.com/JediMindtrick/DemoAngularJS/blob/master/DemoAngularJS/SPA/LOBApp/lob-httpInterceptors.js)
+    6. interceptors [Example](https://github.com/JediMindtrick/DemoAngularJS/blob/master/DemoAngularJS/SPA/LOBApp/lob-httpInterceptors.js)
 3. General design considerations
  * Angular-seed (i.e. by layer) - if you feel like that's what you need to do
  * ngBoilerplate (i.e. by feature) - yes
