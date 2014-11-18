@@ -65,10 +65,10 @@
 				<section data-background="http://i.imgur.com/huvPLDE.png"></section>
 
 				<section>
-					<h2>The answer might be "Yes" when...</h2>
+					<h3>The answer might be "Yes" when...</h3>
 					<br />
 					<div class="fragment">
-						<h3 style="text-decoration: underline;">Single-Page Apps</h3>
+						<h4 style="text-decoration: underline;">Single-Page Apps</h4>
 						<ul>
 							<li>Consumerization of the Enterprise</li>
 							<li>Push work-load out</li>
@@ -77,7 +77,7 @@
 					</div>
 					<br />
 					<div class="fragment">
-						<h3 style="text-decoration: underline;">Javascript-heavy apps</h3>
+						<h4 style="text-decoration: underline;">Javascript-heavy apps</h4>
 						<ul>
 							<li>No native module system (yet)</li>
 							<li>No native observables (yet)</li>
@@ -86,7 +86,7 @@
 					</div>					
 					<br />
 					<div class="fragment">
-						<h3 style="text-decoration: underline;">LOB apps</h3>
+						<h4 style="text-decoration: underline;">LOB apps</h4>
 					</div>
 
 				</section>
@@ -153,16 +153,84 @@
 						<li class="fragment">angular.module()</li>
 						<li class="fragment">app</li>
 						<li class="fragment">controllers</li>
-						<li class="fragment">directives and templates, i.e. ng-* + {{}}</li>
+<!--						<li class="fragment">directives and templates, i.e. ng-* + {{}}</li>-->
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">The Framework</h3>
+					<p class="fragment">directives and templates, i.e. ng-* + {{}}</p>
+
+					<ul>
+						<li class="fragment">They can appear as attribute name, tag name, comments, or class name</li>
+						<li class="fragment"><pre><code style="max-height:570px;" data-trim contenteditable>
+<my-dir></my-dir>
+<span my-dir="exp"></span>
+<!-- directive: my-dir exp -->
+<span class="my-dir: exp;"></span>
+					</code></pre>							
+						</li>
+						<li class="fragment">As attributes they can be named different ways</li>
+												<li class="fragment"><pre><code style="max-height:570px;" data-trim contenteditable>
+<span ng-bind="name"></span>
+<span ng:bind="name"></span>
+<span ng_bind="name"></span>
+<span data-ng-bind="name"></span>
+<span x-ng-bind="name"></span>
+					</code></pre>							
+						</li>
+					</ul>
+				</section>
+
+<!--
+ng-model
+ng-repeat
+ng-controller
+ui-view tag
+<ui-view></ui-view>
+ng-repeat
+ng-href
+ng-include *
+-->
+
+<div ng-include="'/SPA/LOBApp/shell/navbar.html'"></div>
+
+				<section>
+					<h3 style="text-decoration: underline;">The Framework</h3>
+					<p>Some common directives:</p>
+					<ul>
+						<li>ng-model</li>
+						<li>ng-repeat</li>
+						<li>ng-controller</li>
+						<li>ui-view tag</li>
+						<li>
+						<pre style="min-width:240px;"><code data-trim contenteditable>
+<ui-view></ui-view>
+					</code></pre>
+						</li>
+						<li>ng-repeat</li>
+						<li>ng-href</li>
+						<li>ng-include</li>
+						<li>
+						<pre style="min-width:640px;"><code data-trim contenteditable>
+<div ng-include="'/SPA/LOBApp/shell/navbar.html'"></div>
+					</code></pre>							
+						</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3 style="text-decoration: underline;">The Framework</h3>
 					<ul>
-						<li class="fragment">$scope</li>
-						<li class="fragment">routing</li>
-						<li class="fragment">services</li>
+						<li class="fragment">$scope (See <a href="https://gist.github.com/JediMindtrick/f737a1a0e5b0d059deb8">SafeApply</a>)</li>						
+						<li class="fragment"><a href="https://github.com/JediMindtrick/AngularTheBasics-Demo/blob/master/DemoAngularJS/SPA/LOBApp/lob-routes.js">routing</a> (community preference is ui-router)</li>
+						<li class="fragment">services
+							<ul>
+								<li>retrieve by declaring a dependency on the module at the module level and a dependency on the service at the .controller()/.service()/.whatever() level</li>
+								<li>4 ways to create, but <a href="https://gist.github.com/JediMindtrick/8b2532de1a92afa49e83">2 common ones</a></li>
+								<li>Interesting Example: <a href="https://github.com/JediMindtrick/AngularTheBasics-Demo/blob/master/DemoAngularJS/SPA/TicTacToe/identity/identity-service.js">Service</a>, <a href="https://github.com/JediMindtrick/AngularTheBasics-Demo/blob/master/DemoAngularJS/SPA/TicTacToe/app.html">Controller</a></li>
+							</ul>
+						</li>
 						<li class="fragment">$http</li>
 					</ul>
 				</section>
