@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>AngularJS: The Basics</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,6 +42,238 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				<section>
+					<h2>AngularJS, The Basics</h2>
+					<h3>By: Brandon Wilhite</h3>
+				</section>
+
+				<section>
+					<h3>Agenda</h3>
+					<ol>
+						<li>When to use it (or not)</li>
+						<li>General design considerations</li>
+						<li>The Framework</li>
+						<li>(Optional) Hands-on Lab</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>1. When to use it (or not)</h2>
+				</section>
+
+				<!--Borimir's take on it-->
+				<section data-background="http://i.imgur.com/huvPLDE.png"></section>
+
+				<section>
+					<h2>The answer might be "Yes" when...</h2>
+					<br />
+					<div class="fragment">
+						<h3 style="text-decoration: underline;">Single-Page Apps</h3>
+						<ul>
+							<li>Consumerization of the Enterprise</li>
+							<li>Push work-load out</li>
+							<li>Offline/Disconnected scenario</li>
+						</ul>
+					</div>
+					<br />
+					<div class="fragment">
+						<h3 style="text-decoration: underline;">Javascript-heavy apps</h3>
+						<ul>
+							<li>No native module system (yet)</li>
+							<li>No native observables (yet)</li>
+							<li>Treated like a "toy" language (don't)</li>
+						</ul>
+					</div>					
+					<br />
+					<div class="fragment">
+						<h3 style="text-decoration: underline;">LOB apps</h3>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>The answer might be "No" when...</h2>
+					<br />
+					<div class="fragment">
+						<h3 style="text-decoration: underline;">Your app is almost solely animation</h3>						
+						<ul>
+							<li><a href="http://mrdoob.github.io/three.js/examples/css3d_periodictable.html" target="blank">Avoid This</a></li>
+							<li>Reconsider, OR</li>
+							<li>Encapsulate animations in directives and modules</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">Embedded inside another platform</h3>
+					<p>ex. Dynamics CRM forms</p>
+					<p>Reconsider, options?</p>
+					<ul>
+						<li class="fragment">Host static site in virtual sub-directory</li>
+						<li class="fragment">Host on another server/runtime platform such as MVC</li>
+						<li class="fragment">For the above, use the platform sdk, service endpoints, etc.</li>
+						<li class="fragment">Keep SPA-like behavior to a minimum and design around traditional post-back behavior</li>
+						<li class="fragment">Use something else</li>
+					</ul>
+				</section>
+				<section>
+					<h3 style="text-decoration: underline;">Keep in mind browser compatability</h3>
+					<ul>
+						<li>AngularJS 1.2 supports IE8 (1.3 does not)</li>
+						<li>Fun fact: <a href="http://angularjs.blogspot.com/2013/12/angularjs-13-new-release-approaches.html">~50% of Angular team's CI build time was running tests for IE8</a></li>
+						<li>AngularJS 2.0 will only support IE10+</li>
+						<li>Release in 2015/16, support for 1.3 will be for another 1.5-2 years</li>
+						<li><a href="http://eisenbergeffect.bluespire.com/all-about-angular-2-0/">Google has over 1600 internal apps written in 1.x</a></li>
+						<li><a href="http://www.johnpapa.net/the-angular-team-on-angular-1-3-and-the-road-ahead-to-angular-2-0/">They're talking about a migration story</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>2. The Framework</h2>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">Pieces of a SPA</h3>
+					<ol>
+						<li>Modularization - angular.module()</li>
+						<li>Routing - $stateProvider service and OOTB router</li>
+						<li>Data-binding/Templating - $scope + ng* + {{}}</li>
+						<li>Ajax - $http service</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">The Framework</h3>
+					<a href="https://github.com/JediMindtrick/AngularTheBasics-Demo">Demo App</a>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">The Framework</h3>
+					<ul>
+						<li class="fragment">angular.module()</li>
+						<li class="fragment">app</li>
+						<li class="fragment">controllers</li>
+						<li class="fragment">directives and templates, i.e. ng-* + {{}}</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: underline;">The Framework</h3>
+					<ul>
+						<li class="fragment">$scope</li>
+						<li class="fragment">routing</li>
+						<li class="fragment">services</li>
+						<li class="fragment">$http</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>3. General Design Considerations</h2>
+				</section>
+
+				<section>
+					<h3>Project Structure</h3>
+					<br />
+					<p class="fragment">Q: Where do I put my SPA in an MVC project?</p>
+					<p class="fragment">A: In a top-level folder (if SPA is main part of application)</p>
+					<br />
+					<p class="fragment">Highlight the important, minimize the unimportant</p>
+					<p class="fragment">Also a good rule of modeling, in general</p>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<br />
+					<p class="fragment">There used to be two schools of thought</p>
+					<p class="fragment">1. By Layer</p>
+					<pre class="fragment">
+						<code style="max-height: 500px;" class="javascript">					
+					    controllers/
+					        homeController.js
+					        loginController.js
+					    directives/
+					        usersDirective.js
+					        ordersDirective.js
+					    filters/
+					    services/
+					        userService.js
+					        orderService.js
+					        loginService.js
+						partials/
+						    home.html
+						    login.html
+						    users.html
+						    orders.html
+						app.js
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<p class="fragment">2. By Feature</p>
+					<pre class="fragment">
+						<code style="max-height: 600px;" class="objectivec">orders/
+						    directives/
+						        orders<span class="variable">.html</span>
+						        ordersDirective<span class="variable">.js</span>
+						    services/
+						        orderService<span class="variable">.js</span>
+						users/
+						    directives/
+						        users<span class="variable">.html</span>
+						        usersDirective<span class="variable">.js</span>
+						    services/
+						        userService<span class="variable">.js</span>
+						home/
+						    controllers/
+						        home<span class="variable">.html</span>
+						        homeController<span class="variable">.js</span>
+						        login<span class="variable">.html</span>
+						        loginController<span class="variable">.js</span>
+						shared/
+						    services/
+						        i18nService<span class="variable">.js</span>
+						    filters/
+						        i18nFilter<span class="variable">.js</span>
+						app<span class="variable">.js</span>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<br />					
+					<h3 class="fragment">A: By Feature</h3>
+					<br />					
+					<p class="fragment">Highlight the important, minimize the unimportant</p>
+					<p class="fragment">Also a good rule of modeling, in general</p>
+				</section>
+
+				<section>
+					<h3>Dependency Management</h3>
+					<ul>
+						<li>Dependencies are enforced</li>
+						<li>Loading them is not</li>
+						<li>Yes, you can use Require.js</li>						
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="text-decoration:underline">Finally</h3>
+					<h4>Let the front-end model be the front-end model</h4>
+				</section>
+
+				<section>
+					<h3>Resources for this presentation</h3>
+					<ul>
+						<li>Presentation found at <a href="https://github.com/JediMindtrick/AngularTheBasics">https://github.com/JediMindtrick/AngularTheBasics</a></li>
+						<li>Demo app at <a href="https://github.com/JediMindtrick/AngularTheBasics-Demo">https://github.com/JediMindtrick/AngularTheBasics-Demo</a></li>
+						<li>Gists at <a href="https://gist.github.com/JediMindtrick">https://gist.github.com/JediMindtrick</a></li>
+						<li>Built with the excellent <a href="http://lab.hakim.se/reveal-js/#/">reaveal.js</a> by Hakim El Hattab</li>
+					</ul>
+				</section>
+
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>HTML Presentations Made Easy</h3>
