@@ -176,9 +176,6 @@
 					<br />
 					<p class="fragment">Q: Where do I put my SPA in an MVC project?</p>
 					<p class="fragment">A: In a top-level folder (if SPA is main part of application)</p>
-					<br />
-					<p class="fragment">Highlight the important, minimize the unimportant</p>
-					<p class="fragment">Also a good rule of modeling, in general</p>
 				</section>
 
 				<section>
@@ -186,57 +183,55 @@
 					<br />
 					<p class="fragment">There used to be two schools of thought</p>
 					<p class="fragment">1. By Layer</p>
-					<pre class="fragment">
-						<code style="max-height: 500px;" class="javascript">					
-					    controllers/
-					        homeController.js
-					        loginController.js
-					    directives/
-					        usersDirective.js
-					        ordersDirective.js
-					    filters/
-					    services/
-					        userService.js
-					        orderService.js
-					        loginService.js
-						partials/
-						    home.html
-						    login.html
-						    users.html
-						    orders.html
-						app.js
-						</code>
-					</pre>
+					<pre class="fragment"><code data-trim contenteditable>
+controllers/
+    homeController.js
+    loginController.js
+directives/
+    usersDirective.js
+    ordersDirective.js
+filters/
+services/
+    userService.js
+    orderService.js
+    loginService.js
+partials/
+    home.html
+    login.html
+    users.html
+    orders.html
+app.js
+					</code></pre>
 				</section>
 
 				<section>
 					<h3>Q: How do I organize my code?</h3>
 					<p class="fragment">2. By Feature</p>
-					<pre class="fragment">
-						<code style="max-height: 600px;" class="objectivec">orders/
-						    directives/
-						        orders<span class="variable">.html</span>
-						        ordersDirective<span class="variable">.js</span>
-						    services/
-						        orderService<span class="variable">.js</span>
-						users/
-						    directives/
-						        users<span class="variable">.html</span>
-						        usersDirective<span class="variable">.js</span>
-						    services/
-						        userService<span class="variable">.js</span>
-						home/
-						    controllers/
-						        home<span class="variable">.html</span>
-						        homeController<span class="variable">.js</span>
-						        login<span class="variable">.html</span>
-						        loginController<span class="variable">.js</span>
-						shared/
-						    services/
-						        i18nService<span class="variable">.js</span>
-						    filters/
-						        i18nFilter<span class="variable">.js</span>
-						app<span class="variable">.js</span>
+					<pre class="fragment"><code style="max-height:570px;" data-trim contenteditable>
+orders/
+    directives/
+        orders.html
+        ordersDirective.js
+    services/
+        orderService.js
+users/
+    directives/
+        users.html
+        usersDirective.js
+    services/
+        userService.js
+home/
+    controllers/
+        home.html
+        homeController.js
+        login.html
+        loginController.js
+shared/
+    services/
+        i18nService.js
+    filters/
+        i18nFilter.js
+app.js
 						</code>
 					</pre>
 				</section>
