@@ -135,6 +135,7 @@
    1. dependencies are managed
    2. loading them is not
    3. yes, you can use RequireJS with AngularJS
+   4. load order largely doesn't matter, unless you are modifying modules
  * Let the front-end model be the front-end model - consider using $httpBackend
 4. Hands-On Lab
 
