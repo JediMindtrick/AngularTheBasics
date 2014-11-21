@@ -54,16 +54,12 @@
 						<li>When to use it (or not)</li>
 						<li>General design considerations</li>
 						<li>The Framework</li>
-						<li>(Optional) Hands-on Lab</li>
 					</ol>
 				</section>
 
 				<section>
 					<h2>1. When to use it (or not)</h2>
 				</section>
-
-				<!--Borimir's take on it-->
-				<section data-background="http://i.imgur.com/huvPLDE.png"></section>
 
 				<section>
 					<h3>The answer might be "Yes" when...</h3>
@@ -79,11 +75,10 @@
 					<br />
 					<div class="fragment">
 						<h4 style="text-decoration: underline;">Javascript-heavy apps</h4>
-						<p>I love javascript, but it has some problems...</p>
+						<p>I love javascript, but it's missing some things...</p>
 						<ul>
 							<li>No native module system (yet)</li>
 							<li>No native observables (yet)</li>
-							<li>Treated like a "toy" language (don't)</li>
 						</ul>
 					</div>					
 					<br />
@@ -126,19 +121,122 @@
 						<li>AngularJS 2.0 will only support IE10+</li>
 						<li>Release in 2015/16, support for 1.3 will be for another 1.5-2 years</li>
 						<li><a href="http://eisenbergeffect.bluespire.com/all-about-angular-2-0/">Google has over 1600 internal apps written in 1.x</a></li>
-						<li><a href="http://www.johnpapa.net/the-angular-team-on-angular-1-3-and-the-road-ahead-to-angular-2-0/">They're talking about a migration story</a></li>
+						<li><a href="http://www.johnpapa.net/the-angular-team-on-angular-1-3-and-the-road-ahead-to-angular-2-0/">They're talking about a migration story (now)</a></li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>2. The Framework</h2>
+					<h2>2. General Design Considerations</h2>
 				</section>
+
+				<section>
+					<h3>Project Structure</h3>
+					<br />
+					<p class="fragment">Q: Where do I put my SPA in an MVC project?</p>
+					<p class="fragment">A: In a top-level folder (if SPA is main part of application)</p>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<br />
+					<p class="fragment">There used to be two schools of thought</p>
+					<p class="fragment">1. By Layer</p>
+					<pre class="fragment"><code data-trim contenteditable>
+controllers/
+    homeController.js
+    loginController.js
+directives/
+    usersDirective.js
+    ordersDirective.js
+filters/
+services/
+    userService.js
+    orderService.js
+    loginService.js
+partials/
+    home.html
+    login.html
+    users.html
+    orders.html
+app.js
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<p class="fragment">2. By Feature</p>
+					<pre class="fragment"><code style="max-height:570px;" data-trim contenteditable>
+orders/
+    orders.html
+    orders.js
+    orders-directive.js
+    order-service.js
+users/
+    users.css
+    users.html
+    users.js
+    users-directive.js
+    user-service.js
+home/
+    home.js
+    home.html
+    login.html
+    login.js
+components/
+    i18n/
+    	i18n-service.js
+        i18n-filter.js
+    identity/
+    	identity-service.js
+app.js
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Q: How do I organize my code?</h3>
+					<br />					
+					<h3 class="fragment">A: By Feature</h3>
+					<br />					
+					<p class="fragment">Highlight the important, minimize the unimportant</p>
+					<p class="fragment">Also a good rule of modeling, in general</p>
+
+					<br />
+					<p class="fragment">Extra Resouces:</p>
+					<ul>
+						<li class="fragment"><a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">Google's recommendation</a></li>
+						<li class="fragment"><a href="https://github.com/yeoman/generator-angular/issues/109">https://github.com/yeoman/generator-angular/issues/109</a></li>
+						<li class="fragment"><a href="http://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/">http://www.artandlogic.com/blog/2013/05/ive-been-doing-it-wrong-part-1-of-3/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Dependency Management</h3>
+					<ul>
+						<li>Dependencies are enforced</li>
+						<li>Loading them is not</li>
+						<li>Yes, you can use Require.js</li>						
+					</ul>
+				</section>
+
+				<section>
+					<h3 style="text-decoration:underline">Finally</h3>
+					<h4>Prefer standard web technologies as much as possible</h4>
+					<h4>Let the front-end model be the front-end model</h4>
+				</section>
+
+				<section>
+					<h2>3. The Framework</h2>
+				</section>
+
+				<!--Borimir's advice-->
+				<section data-background="http://i.imgur.com/huvPLDE.png"></section>
 
 				<section>
 					<h3 style="text-decoration: underline;">Pieces of a SPA</h3>
 					<ol>
 						<li>Modularization - angular.module()</li>
-						<li>Routing - $stateProvider service and OOTB router</li>
+						<li>Routing - $stateProvider service (angular-ui)</li>
 						<li>Data-binding/Templating - $scope + ng* + {{}}</li>
 						<li>Ajax - $http service</li>
 					</ol>
@@ -234,98 +332,6 @@ ng-include *
 						</li>
 						<li class="fragment">$http</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2>3. General Design Considerations</h2>
-				</section>
-
-				<section>
-					<h3>Project Structure</h3>
-					<br />
-					<p class="fragment">Q: Where do I put my SPA in an MVC project?</p>
-					<p class="fragment">A: In a top-level folder (if SPA is main part of application)</p>
-				</section>
-
-				<section>
-					<h3>Q: How do I organize my code?</h3>
-					<br />
-					<p class="fragment">There used to be two schools of thought</p>
-					<p class="fragment">1. By Layer</p>
-					<pre class="fragment"><code data-trim contenteditable>
-controllers/
-    homeController.js
-    loginController.js
-directives/
-    usersDirective.js
-    ordersDirective.js
-filters/
-services/
-    userService.js
-    orderService.js
-    loginService.js
-partials/
-    home.html
-    login.html
-    users.html
-    orders.html
-app.js
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Q: How do I organize my code?</h3>
-					<p class="fragment">2. By Feature</p>
-					<pre class="fragment"><code style="max-height:570px;" data-trim contenteditable>
-orders/
-    directives/
-        orders.html
-        ordersDirective.js
-    services/
-        orderService.js
-users/
-    directives/
-        users.html
-        usersDirective.js
-    services/
-        userService.js
-home/
-    controllers/
-        home.html
-        homeController.js
-        login.html
-        loginController.js
-shared/
-    services/
-        i18nService.js
-    filters/
-        i18nFilter.js
-app.js
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h3>Q: How do I organize my code?</h3>
-					<br />					
-					<h3 class="fragment">A: By Feature</h3>
-					<br />					
-					<p class="fragment">Highlight the important, minimize the unimportant</p>
-					<p class="fragment">Also a good rule of modeling, in general</p>
-				</section>
-
-				<section>
-					<h3>Dependency Management</h3>
-					<ul>
-						<li>Dependencies are enforced</li>
-						<li>Loading them is not</li>
-						<li>Yes, you can use Require.js</li>						
-					</ul>
-				</section>
-
-				<section>
-					<h3 style="text-decoration:underline">Finally</h3>
-					<h4>Let the front-end model be the front-end model</h4>
 				</section>
 
 				<section>
